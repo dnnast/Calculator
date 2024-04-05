@@ -4,43 +4,49 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 27px; 
-    color: #8F8E89;
+    color: #8f8e89;
 }
 body{
     background-color: #CBE1E9;
 }
 #calculator{
     width: 360px;
-    height: 600px;
-    margin-top: 30px;
+    height: 610px;
+    margin: 30px auto;
     box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0 0 7px #888;
+    /* border-radius: 10px; */
+    box-shadow: 5px 5px 10px #888;
 }    
 
 #result-conatiner{
     background-color: #FFE9A3;
-    width: 260px;
-    height: 145px;
-    border-radius: 10px;
-    margin-top: 30px;
-    box-shadow: 0 0 3px #888;
-    border: 2px solid #969696;
-    padding: 10px;
+    /* width: 260px;
+    height: 145px; */
+    height: 200px;
+    width: 360px;
+    /* border-radius: 10px; */
+    /* margin-top: 30px; */
+    /* box-shadow: 0 0 3px #888; */
+    /* border: 2px solid #969696; */
+    /* padding: 10px; */
     text-align: end;
+    box-shadow:  0 4px 5px -4px #888;
     
 }
 #calculations{
+    color: #b1b0a9;
+    font-size: 40px;
     position: relative;
-    top: 10px;
-    right: -80px;
+    top: 20px;
+    right: -90px; 
 }
 #result{
-    font-size: 50px;
+    font-size: 60px;
+    font-weight: 600;
     position: relative;
-    top: 40px;
-    right: -80px;
-}
+    top: 60px;
+    right: -90px;
+} 
 
 table{
     display: flex;
@@ -55,7 +61,7 @@ tbody{
 input{
     margin: 5px;
     box-sizing: border-box; 
-    background-color: #fffcf0;
+    background-color: #fffbe8;
     border: none; 
     box-shadow: 0 0 7px #888;
 }
@@ -65,12 +71,12 @@ input{
     width: 60px;
 }
 .square-btn{
-    border-radius: 7px;
+    border-radius: 5px;
     height: 60px;
     width: 60px;
 }
 .rectangle-btn{
-    border-radius: 7px;
+    border-radius: 5px;
     height: 60px;
     width: 132px;
 }
