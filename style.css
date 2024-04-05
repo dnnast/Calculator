@@ -2,12 +2,12 @@
     margin: 0 auto;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 550;
     font-size: 27px; 
     color: #8f8e89;
 }
 body{
-    background-color: #CBE1E9;
+    background-color: #d3eef8;
 }
 #calculator{
     width: 360px;
@@ -19,7 +19,7 @@ body{
 }    
 
 #result-conatiner{
-    background-color: #FFE9A3;
+    background-color: #faf69d;
     /* width: 260px;
     height: 145px; */
     height: 200px;
@@ -61,7 +61,7 @@ tbody{
 input{
     margin: 5px;
     box-sizing: border-box; 
-    background-color: #fffbe8;
+    background-color: #fffdf5;
     border: none; 
     box-shadow: 0 0 7px #888;
 }
@@ -81,7 +81,7 @@ input{
     width: 132px;
 }
 input[value='c']{
-    background-color: #FFE9A3;
+    background-color: #faf69d;
 }
 
 
