@@ -1,0 +1,88 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 27px; 
+    color: #8F8E89;
+}
+body{
+    background-color: #CBE1E9;
+}
+#calculator{
+    width: 360px;
+    height: 600px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 7px #888;
+}    
+
+#result-conatiner{
+    background-color: #FFE9A3;
+    width: 260px;
+    height: 145px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 0 3px #888;
+    border: 2px solid #969696;
+    padding: 10px;
+    text-align: end;
+    
+}
+#calculations{
+    position: relative;
+    top: 10px;
+    right: -80px;
+}
+#result{
+    font-size: 50px;
+    position: relative;
+    top: 40px;
+    right: -80px;
+}
+
+table{
+    display: flex;
+    flex-direction: column;
+    background-color: #A9B5E2;
+}
+
+tbody{
+    padding-top: 25px;
+}
+
+input{
+    margin: 5px;
+    box-sizing: border-box; 
+    background-color: #fffcf0;
+    border: none; 
+    box-shadow: 0 0 7px #888;
+}
+.round-btn{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+.square-btn{
+    border-radius: 7px;
+    height: 60px;
+    width: 60px;
+}
+.rectangle-btn{
+    border-radius: 7px;
+    height: 60px;
+    width: 132px;
+}
+input[value='c']{
+    background-color: #FFE9A3;
+}
+
+
+/* button animation */ 
+input:hover {
+  transform: translateY(-1px);
+}
+input:active {
+  transform: translateY(0);
+}
