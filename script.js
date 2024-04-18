@@ -1,13 +1,13 @@
-const calculatorContainer = document.getElementById("calculator");
+//const calculatorContainer = document.getElementById("calculator");
 const calculationsDisplay = document.getElementById("calculations");
 const resultDisplay = document.getElementById("result");
 let list = [];
+//----------------------FUNCTIONS--------------------------
+// Function to perform arithmetic operations
+function operate(equationList) {
+    if (equationList.length < 3) return equationList[0];
 
-//---------------------OPERATOR FUNCTIONS------------------------
-function operate(list) {
-    if (list.length < 3) return list[0];
-
-    const [a, operator, b] = list;
+    const [a, operator, b] = equationList;
 
     switch (operator) {
         case "+":
@@ -17,19 +17,19 @@ function operate(list) {
         case "×":
             return round(a * b);
         case "÷":
-            if (b === 0) return "ERROR";
+            if (b == 0) return "ERROR";
             return round(a / b);
         default:
             return "ERROR";
     }
 }
 
-function round(int) {
-    return Math.round(int * 1000) / 1000;
+function round(number) {
+    return Math.round(number * 1000) / 1000;
 }
-
+// Calculator: main function
 function calculator(element) {
-    resultDisplay.innerHTML = list[list.length - 1] || "0";
+    resultDisplay.textContent = list[list.length - 1] || "0";
 
     if (element) {
         if (list.length !== 0) {
@@ -37,8 +37,8 @@ function calculator(element) {
                 // Clear display
                 list = [];
             } else if (element === "del") {
-                // Delete last char
-                if (list[list.length - 1].length == 1) {
+                // Delete last character
+                if (list[list.length - 1].length == 1 || list[list.length - 1] == "ERROR") {
                     list.pop();
                 } else {
                     list[list.length - 1] = list[list.length - 1].slice(0, -1);
@@ -46,7 +46,7 @@ function calculator(element) {
             } else if (list[list.length - 1].match(/[0-9.]/) && element.match(/[0-9.]/)) {
                 // Combine conditions for numbers and decimals
                 if (element == ".") {
-                    // Insert float ('.')
+                    // Insert decimal point ('.')
                     if (!list[list.length - 1].includes(".")) {
                         list[list.length - 1] = list[list.length - 1] + element;
                     }
@@ -67,7 +67,6 @@ function calculator(element) {
                     if (element !== "=") {
                         list.push("=");
                     }
-
                     list.push(operate(list).toString());
                 }
             } else if (element.match(/[×÷\+-]/)) {
@@ -78,7 +77,7 @@ function calculator(element) {
                     list.push(element);
                 }
             } else {
-                // Insert other char
+                // Insert other characters
                 list.push(element);
             }
         } else {
@@ -88,30 +87,78 @@ function calculator(element) {
             }
         }
 
-        // display Calculations
+        // Display calculations
         displayCalculations(list);
 
         if (list.length === 5) {
             list = [list[4]];
         }
+        if (list[list.length - 1] == "ERROR") {
+            list = [];
+        }
     }
 }
 
+// Function to display calculations and result
 function displayCalculations(list) {
-    // display Calculations
-    calculationsDisplay.innerHTML = list.join("");
+    console.log(list);
+    calculationsDisplay.textContent = list.join("");
 
     // display Result
     if (list.length == 0) {
-        resultDisplay.innerHTML = "0";
-    } else if (list[list.length - 1].match(/[0-9.]/)) {
-        resultDisplay.innerHTML = list[list.length - 1];
+        resultDisplay.textContent = "0";
+    } else if (list[list.length - 1].match(/[0-9.]/) || list[list.length - 1] == "ERROR") {
+        resultDisplay.textContent = list[list.length - 1];
     } else {
-        resultDisplay.innerHTML = list[list.length - 2];
+        resultDisplay.textContent = list[list.length - 2];
     }
 }
 
 //----------------------EVENT LISTENERS--------------------------
-calculatorContainer.addEventListener("click", (event) => {
+document.documentElement.addEventListener("click", (event) => {
     calculator(event.target.value);
+});
+
+document.documentElement.addEventListener("keyup", (event) => {
+    switch (event.key) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+        case "0":
+        case ".":
+        case "=":
+        case "+":
+        case "-":
+            calculator(event.key);
+            break;
+
+        case "*":
+            calculator("×");
+            break;
+
+        case "/":
+            calculator("÷");
+            break;
+
+        case "Backspace":
+            calculator("del");
+            break;
+
+        case "Delete":
+            calculator("c");
+            break;
+
+        case "Enter":
+            calculator("=");
+            break;
+
+        default:
+            break;
+    }
 });

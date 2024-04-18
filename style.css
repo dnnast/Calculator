@@ -14,38 +14,36 @@ body{
     height: 610px;
     margin: 30px auto;
     box-sizing: border-box;
-    /* border-radius: 10px; */
     box-shadow: 5px 5px 10px #888;
 }    
 
 #result-conatiner{
     background-color: #faf69d;
-    /* width: 260px;
-    height: 145px; */
     height: 200px;
     width: 360px;
-    /* border-radius: 10px; */
-    /* margin-top: 30px; */
-    /* box-shadow: 0 0 3px #888; */
-    /* border: 2px solid #969696; */
-    /* padding: 10px; */
     text-align: end;
-    box-shadow:  0 4px 5px -4px #888;
+    box-shadow:  0 4px 5px -4px #888;   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     
 }
+
 #calculations{
     color: #b1b0a9;
     font-size: 40px;
-    position: relative;
-    top: 20px;
-    right: -90px; 
+    width: 310px;
+    height: 60px;
+    max-width: 310px;
+    overflow: auto;    
 }
 #result{
     font-size: 60px;
     font-weight: 600;
-    position: relative;
-    top: 60px;
-    right: -90px;
+    width: 310px;
+    max-width: 310px;
+    margin-top: 20px;
+    overflow: auto;
 } 
 
 table{
@@ -94,3 +92,41 @@ input:hover {
 input:active {
   transform: translateY(0);
 }
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #A9B5E2 #FFFDF5;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #FFFDF5;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #FFFDF5;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #FFFDF5;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #A9B5E2;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #A9B5E2;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #A9B5E2;
+  }
+  
