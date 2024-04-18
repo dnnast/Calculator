@@ -83,7 +83,9 @@ input{
 input[value='c']{
     background-color: #faf69d;
 }
-
+input[value='del']{
+    background-color: #f8f6cd;
+}
 
 /* button animation */ 
 input:hover {
