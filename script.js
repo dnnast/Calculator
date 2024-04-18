@@ -93,7 +93,7 @@ function calculator(element) {
         if (list.length === 5) {
             list = [list[4]];
         }
-        if (list[list.length - 1] == "ERROR") {
+        if (list.includes("ERROR") || list[1] == "=") {
             list = [];
         }
     }
